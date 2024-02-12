@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NES Pentris</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png">
+</head>
+<body>
+    <div id="menu">
+        <img id="logo" src="img/logo.png">
+        <div id="levelBack"></div>
+        <img id="menuHover" src="img/menuHover.gif">
+        <img id="levelBoxes" src="img/levelBoxes.png">
+        <p id="bestScores">BEST SCORES<br>000000 - LV00<br>000000 - LV00<br>000000 - LV00</p>
+        <p id="versionText">v0.1.3</p>
+        <p id="infoText" onclick="showInfo()">INFO</p>
+    </div>
+    <div id="info">
+        <p>
+            <span style="color: #e4e494">NES PENTRIS</span> - MADE BY DEMONIN<br><br>
+            BASED ON THE <a href="https://github.com/zohassadar/Pentris">ORIGINAL ROM HACK</a> BY ZOHASSADAR<br><br>
+            CONTROLS:
+        </p>
+        <p style="display: inline-block; padding-right: 6px"><span class="keybind">ARROWLEFT</span> - MOVE LEFT</p><button class="changeKeybindButton" onclick="changeKeybind(1)">CHANGE</button><br>
+        <p style="display: inline-block; padding-right: 6px"><span class="keybind">ARROWRIGHT</span> - MOVE RIGHT</p><button class="changeKeybindButton" onclick="changeKeybind(2)">CHANGE</button><br>
+        <p style="display: inline-block; padding-right: 6px"><span class="keybind">ARROWDOWN</span> - SOFT DROP</p><button class="changeKeybindButton" onclick="changeKeybind(3)">CHANGE</button><br>
+        <p style="display: inline-block; padding-right: 6px"><span class="keybind">A</span> - ROTATE LEFT</p><button class="changeKeybindButton" onclick="changeKeybind(4)">CHANGE</button><br>
+        <p style="display: inline-block; padding-right: 6px"><span class="keybind">S</span> - ROTATE RIGHT</p><button class="changeKeybindButton" onclick="changeKeybind(5)">CHANGE</button><br>
+        <p style="color: #999">ESCAPE - RETURN TO MENU<br>D - TOGGLE DARK MODE<br><br><span style="color: #64b0ff; cursor: pointer;" onclick="hideInfo()">CLOSE</span></p>
+    </div>
+    <div id="game">
+        <canvas id="board" width="128" height="192"></canvas>
+        <img id="linesBox" src="img/linesBox.png">
+        <img id="sideInfo" src="img/sideInfo.png">
+        <canvas id="nextCanvas" width="48" height="32"></canvas>
+        <p id="linesText">000</p>
+        <p id="bestScoreText">000000</p>
+        <p id="scoreText">000000</p>
+        <p id="levelText">00</p>
+    </div>
+    <script src="pieces.js"></script>
+    <script src="script.js?v013=1"></script>
+</body>
+</html>

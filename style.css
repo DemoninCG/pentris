@@ -1,0 +1,175 @@
+@font-face{
+    font-family:"NES";
+    font-style:normal;
+    font-weight:400;
+    src:url(nintendo-nes-font.woff) format("woff");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #747474;
+    image-rendering: pixelated;
+    background-image: url('img/background.png');
+    background-size: 320px 320px;
+    background-attachment: fixed;
+    background-position: center; 
+    user-select: none;
+}
+
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 224px;
+    height: 192px;
+    transform: translate(-50%, -50%) scale(4);
+}
+
+#levelBack {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    width: 80px;
+    height: 64px;
+    background-color: black;
+}
+
+#menuHover {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    z-index: 1;
+}
+
+#levelBoxes {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    z-index: 2;
+}
+
+#bestScores {
+    position: absolute;
+    top: 88px;
+    left: 88px;
+    background-color: black;
+    padding: 4px;
+    text-align: left;
+}
+
+#versionText {
+    position: absolute;
+    bottom: 40px;
+    right: 24px;
+    background-color: black;
+    padding: 2px;
+    color: #747474;
+}
+
+#infoText {
+    position: absolute;
+    bottom: 40px;
+    left: 88px;
+    background-color: black;
+    padding: 2px;
+    z-index: 3;
+    color: #64b0ff;
+    cursor: pointer;
+}
+
+#info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 8px;
+    transform: translate(-50%, -50%) scale(4);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    width: 320px;
+}
+
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 192px;
+    height: 224px;
+    transform: translate(-50%, -50%) scale(4);
+    display: none;
+}
+
+#board {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    background-color: black;
+}
+
+#sideInfo {
+    position: absolute;
+    top: 0;
+    left: 128px;
+    width: 64px;
+}
+
+#nextCanvas {
+    position: absolute;
+    top: 96px;
+    left: 136px;
+}
+
+#linesBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 128px;
+}
+
+p {
+    font-family: "NES";
+    font-size: 8px;
+    color: white;
+    margin: 0;
+}
+
+button {
+    font-family: "NES";
+    font-size: 8px;
+    display: inline-block;
+    height: 13px;
+}
+
+a {
+    color: #ccc;
+}
+
+#linesText {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: 80px;
+}
+
+#bestScoreText {
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    left: 136px;
+}
+
+#scoreText {
+    position: absolute;
+    z-index: 2;
+    top: 48px;
+    left: 136px;
+}
+
+#levelText {
+    position: absolute;
+    z-index: 2;
+    top: 152px;
+    left: 152px;
+}
