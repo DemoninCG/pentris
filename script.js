@@ -368,7 +368,7 @@ document.addEventListener("keydown", function(event) {
             if (event.key === keybinds[2] && !keysHeld[2]) {keysHeld[2] = true};
             if (event.key === keybinds[3] && !keysHeld[3]) {keysHeld[3] = true; rotateCounterClockwise()};
             if (event.key === keybinds[4] && !keysHeld[4]) {keysHeld[4] = true; rotateClockwise()};
-            if (event.key === "Escape") returnToMenu()
+            if (event.key === "Escape" && !dead) returnToMenu()
         }
     }
 });
