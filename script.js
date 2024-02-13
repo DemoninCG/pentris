@@ -426,7 +426,6 @@ function rotateClockwise() {
             }
         }
     }
-    console.log(tempTilePositions)
     //Check if any tile is overlapping the board
     let touchingBoard = false;
     //Check if any tile is directly above a 1 on the board
