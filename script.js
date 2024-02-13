@@ -146,7 +146,7 @@ function startGame(levelPicked=0) {
     gamePlaying = true
     cannotMoveDown = false
     cannotMoveHorizontal = false
-    nextPieceNumber = Math.floor(Math.random() * 18) + 1
+    nextPieceNumber = getRandomWeight()
     timeOfLastUpdate = Date.now()
     document.getElementById("menu").style.display = "none"
     document.getElementById("game").style.display = "block"
@@ -248,17 +248,26 @@ function displayNextPiece(x) {
 
 }
 
+function getRandomWeight() {
+    let totalWeight = pieceWeights.reduce((a, b) => a + b, 0);
+    let random = Math.floor(Math.random() * totalWeight);
+    for (let i=0;i<pieceWeights.length;i++) {
+        random -= pieceWeights[i];
+        if (random < 0) return i+1;
+    }
+}
+
 let cannotMoveDown = false
 let cannotMoveHorizontal = false
 let dead = false
-let nextPieceNumber = Math.floor(Math.random() * 18) + 1
+let nextPieceNumber = getRandomWeight()
 function pickPiece() {
     waitingForNextPiece = false
     cannotMoveHorizontal = false
     if (keysHeld[2]) cannotMoveDown = true
     pieceNumber = nextPieceNumber;
     piece = initializePiece(pieceNumber);
-    nextPieceNumber = Math.floor(Math.random() * 18) + 1
+    nextPieceNumber = getRandomWeight()
     position[0] = 7
     position[1] = pieceHeights[pieceNumber-1]
     calculateTilePositions()
