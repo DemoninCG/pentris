@@ -328,14 +328,15 @@ let bestPushdown = 0
 document.addEventListener("keydown", function(event) {
     if (changingKeybind) {
         if (event.key === "Escape") {document.getElementsByClassName("changeKeybindButton")[changingKeybind-1].innerText = "CHANGE"; changingKeybind = 0; return}
-        if (event.key === "d") {return}
+        if (event.key === "p") {return}
         keybinds[changingKeybind-1] = event.key
         document.getElementsByClassName("changeKeybindButton")[changingKeybind-1].innerText = "CHANGE"
         document.getElementsByClassName("keybind")[changingKeybind-1].innerText = event.key.toUpperCase()
+        localStorage.setItem("pentrisKeybinds", JSON.stringify(keybinds));
         changingKeybind = 0
     }
     else {
-        if (event.key === "d") {
+        if (event.key === "p") {
             darkMode = !darkMode
             if (darkMode) {document.body.style.backgroundImage = "url('img/backgroundDark2.png')"}
             else {document.body.style.backgroundImage = "url('img/background.png')"}
